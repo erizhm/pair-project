@@ -29,7 +29,7 @@ Hashtag_id int
 
     }
 
-Ref: Profiles.UserId > Users.id
+Ref: Profiles.UserId - Users.id
 Ref: Posts.UserId > Users.id
 Ref: Posts.id < Post_Hashtag.Post_id
 Ref: Hashtags.id < Post_Hashtag.Hashtag_id

@@ -8,31 +8,31 @@
       "name": "Users",
       "schemaName": "public",
       "x": 12,
-      "y": 194
+      "y": 12
     },
     {
       "name": "Profiles",
       "schemaName": "public",
-      "x": 58.09155502677528,
-      "y": -29.625959369498226
+      "x": 366.3829085399133,
+      "y": -109.15737996205297
     },
     {
       "name": "Posts",
       "schemaName": "public",
-      "x": 241.55411669234152,
-      "y": 309.03957026665176
+      "x": 455.80859375,
+      "y": 218
     },
     {
       "name": "Hashtags",
       "schemaName": "public",
-      "x": 426.5583805567781,
-      "y": 385.091932126614
+      "x": 12,
+      "y": 218
     },
     {
       "name": "Post_Hashtag",
       "schemaName": "public",
-      "x": 289.50639579665506,
-      "y": 120.9991472271126
+      "x": 904.76513671875,
+      "y": 12
     }
   ],
   "tableGroupCollapseStates": [],
@@ -44,7 +44,7 @@
       ],
       "firstTableName": "Profiles",
       "firstSchemaName": "public",
-      "firstRelation": "*",
+      "firstRelation": "1",
       "secondFieldNames": [
         "id"
       ],
@@ -81,7 +81,16 @@
       "secondTableName": "Post_Hashtag",
       "secondSchemaName": "public",
       "secondRelation": "*",
-      "checkPoints": []
+      "checkPoints": [
+        {
+          "x": 763.4306640625,
+          "y": 266
+        },
+        {
+          "x": 763.4306640625,
+          "y": 60
+        }
+      ]
     },
     {
       "firstFieldNames": [
