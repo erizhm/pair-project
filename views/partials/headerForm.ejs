@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= typeof title != 'undefined' ? title : 'Pop - Make it Pop!' %></title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --pop-color: #f44336;
+      --pop-hover: #d32f2f;
+    }
+    
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    a.text-pop {
+      color: var(--pop-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a.text-pop:hover {
+      color: var(--pop-hover);
+      text-decoration: underline;
+    }
+    
+    .btn-pop {
+      background-color: var(--pop-color);
+      border-color: var(--pop-color);
+      color: white;
+      font-weight: 600;
+    }
+    .btn-pop:hover {
+      background-color: var(--pop-hover);
+      border-color: var(--pop-hover);
+      color: white;
+    }
+
+    .btn-outline-pop {
+      color: var(--pop-color);
+      border-color: var(--pop-color);
+      font-weight: 600;
+    }
+    .btn-outline-pop:hover {
+      background-color: var(--pop-color);
+      color: white;
+      border-color: var(--pop-color);
+    }
+    
+    .logo-text {
+      color: var(--pop-color);
+      font-weight: bold;
+      font-size: 2rem;
+      text-decoration: none;
+    }
+
+    .card-auth {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>

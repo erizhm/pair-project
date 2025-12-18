@@ -1,0 +1,4 @@
+[
+    { "email": "admin@hacktivmail.com", "password": "123456", "role": "Admin"},
+    { "email": "user1@usermail.com", "password": "123456", "role": "User"}
+]

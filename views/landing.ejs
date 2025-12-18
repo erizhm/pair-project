@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pop - Make it Pop!</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --pop-color: #f44336;
+      --pop-hover: #d32f2f;
+    }
+
+    .text-pop {
+      color: var(--pop-color) !important;
+    }
+    
+    .btn-pop {
+      background-color: var(--pop-color);
+      border-color: var(--pop-color);
+      color: white;
+      font-weight: 600;
+    }
+    .btn-pop:hover {
+      background-color: var(--pop-hover);
+      border-color: var(--pop-hover);
+      color: white;
+    }
+
+    .btn-outline-pop {
+      color: var(--pop-color);
+      border-color: var(--pop-color);
+      font-weight: 600;
+    }
+    .btn-outline-pop:hover {
+      background-color: var(--pop-color);
+      color: white;
+      border-color: var(--pop-color);
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, #f44336 0%, #ff7961 100%);
+      color: white;
+      padding: 120px 0;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--pop-color);
+      margin-bottom: 1rem;
+    }
+
+    .card-feature {
+      transition: transform 0.3s;
+    }
+    .card-feature:hover {
+      transform: translateY(-5px);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-3 text-pop" href="/">Pop.</a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div class="d-flex gap-2 mt-3 mt-lg-0">
+          <a href="/login" class="btn btn-outline-pop px-4">Masuk</a>
+          <a href="/register" class="btn btn-pop px-4">Daftar</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-section text-center">
+    <div class="container">
+      <h1 class="display-3 fw-bold mb-3">Biarkan Suaramu <span style="color: #ffebee;">Nge-Pop!</span></h1>
+      <p class="lead mb-5 fs-4">Media sosial paling simpel untuk berbagi momen seru.<br>Tanpa filter ribet, cuma kamu dan ceritamu.</p>
+      
+      <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+        <a href="/register" class="btn btn-light btn-lg px-5 text-pop fw-bold shadow">Mulai Sekarang</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="py-5 bg-light">
+    <div class="container mt-4">
+      <div class="row text-center g-4">
+        
+        <div class="col-md-4">
+          <div class="p-5 bg-white rounded-4 shadow-sm h-100 card-feature">
+            <div class="feature-icon">🔥</div>
+            <h3 class="fw-bold">Trending Pop</h3>
+            <p class="text-muted">Temukan topik panas yang sedang dibicarakan semua orang dengan fitur Hashtag.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="p-5 bg-white rounded-4 shadow-sm h-100 card-feature">
+            <div class="feature-icon">⚡</div>
+            <h3 class="fw-bold">Instan & Cepat</h3>
+            <p class="text-muted">Posting status semudah menjentikkan jari. Tidak perlu loading lama.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="p-5 bg-white rounded-4 shadow-sm h-100 card-feature">
+            <div class="feature-icon">❤️</div>
+            <h3 class="fw-bold">Komunitas</h3>
+            <p class="text-muted">Terhubung dengan teman baru dan bangun lingkaran pertemananmu sendiri.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 bg-white border-top text-center">
+    <div class="container">
+      <p class="text-muted mb-0">© <span id="current-year"></span> <strong>Pop Project</strong>. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    const yearSpan = document.getElementById('current-year')
+    const currentYear = new Date().getFullYear()
+    yearSpan.textContent = currentYear
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<%- include('../partials/headerForm', { title: 'Daftar Akun - Pop' }) %>
+
+<div class="d-flex align-items-center min-vh-100 py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        
+        <div class="text-center mb-4">
+          <a href="/" class="logo-text">Pop.</a>
+          <p class="text-muted">Gabung sekarang, ramaikan kemudian.</p>
+        </div>
+
+        <div class="card card-auth p-4">
+          <div class="card-body">
+            <h4 class="fw-bold mb-4 text-center">Buat Akun Baru</h4>
+
+            <% if (errors.length > 0) { %>
+              <div class="alert alert-danger fade show" role="alert">
+                <ul class="mb-0 ps-3">
+                  <% errors.forEach(err => { %>
+                    <li><%= err %></li>
+                  <% }) %>
+                </ul>
+              </div>
+            <% } %>
+
+            <form action="/register" method="POST">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email" 
+                       placeholder="nama@email.com" 
+                       value="<%= input.email || '' %>">
+              </div>
+
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Minimal 6 karakter">
+              </div>
+
+              <div class="mb-3">
+                <label for="role" class="form-label">Daftar Sebagai</label>
+                <select class="form-select" name="role" id="role">
+                  <option value="User" <%= input.role === 'User' ? 'selected' : '' %>>User</option>
+                  <option value="Admin" <%= input.role === 'Admin' ? 'selected' : '' %>>Admin</option>
+                </select>
+              </div>
+
+              <div class="d-grid gap-2 mt-4">
+                <button type="submit" class="btn btn-pop btn-lg">Daftar Sekarang</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <p class="text-muted">Sudah punya akun? <a href="/login" class="text-pop">Masuk di sini</a></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footerForm') %>
