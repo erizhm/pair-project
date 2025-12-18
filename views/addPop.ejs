@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buat Postingan - Pop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <style>
+    :root {
+      --pop-color: #f44336;
+      --pop-hover: #d32f2f;
+    }
+    body { background-color: #f8f9fa; }
+    .text-pop { color: var(--pop-color) !important; }
+    
+    .btn-pop {
+      background-color: var(--pop-color);
+      border-color: var(--pop-color);
+      color: white;
+      font-weight: 600;
+      border-radius: 50px;
+    }
+    .btn-pop:hover {
+      background-color: var(--pop-hover);
+      border-color: var(--pop-hover);
+      color: white;
+    }
+
+    .nav-link-home {
+        color: #555;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.2s;
+    }
+    .nav-link-home:hover {
+        color: var(--pop-color);
+    }
+
+    .card-post {
+      border: none;
+      border-radius: 1rem;
+      transition: transform 0.2s;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+    <div class="container">
+      
+      <a class="navbar-brand fw-bold fs-3 text-pop" href="/">Pop.</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+            
+            <a href="/" class="nav-link-home d-flex align-items-center gap-1">
+                <i class="bi bi-house-door-fill"></i> Beranda
+            </a>
+
+            <div class="vr d-none d-lg-block mx-1"></div>
+
+            <span class="text-muted d-none d-lg-block">
+                Halo, <strong><%= currentUser && currentUser.Profile ? currentUser.Profile.username : (currentUser ? currentUser.email : 'User') %></strong>
+            </span>
+            
+            <a href="/logout" class="btn btn-outline-secondary border-0 btn-sm" title="Logout">
+                <i class="bi bi-box-arrow-right"></i>
+            </a>
+
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6"> <div class="mb-3">
+                <a href="/" class="text-decoration-none text-muted small">
+                    <i class="bi bi-arrow-left"></i> Kembali ke Timeline
+                </a>
+            </div>
+
+            <div class="card card-post bg-white shadow-sm">
+                <div class="card-body p-5">
+
+                <% if (errors.length > 0) { %>
+                    <div class="alert alert-danger fade show" role="alert">
+                        <ul class="mb-0 ps-3">
+                            <% errors.forEach(err => { %>
+                            <li><%= err %></li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                <% } %>
+                    
+                    <div class="text-center mb-4">
+                        <h3 class="fw-bold">Buat Postingan</h3>
+                        <p class="text-muted">Bagikan ceritamu ke semua orang!</p>
+                    </div>
+
+                    <form action="/pop/add" method="post" enctype="multipart/form-data">
+                        
+                        <div class="mb-4">
+                            <label class="form-label fw-bold text-secondary">Apa yang anda pikirkan?</label>
+                            <textarea name="content" class="form-control bg-light border-0" rows="6" placeholder="Tulis sesuatu yang menarik (gunakan #hashtag)..." style="resize: none;"></textarea>
+                        </div>
+    
+                            <div class="mb-4">
+                                <label class="form-label fw-bold text-secondary">Gambar (Opsional)</label>
+                                <input type="file" name="picture" class="form-control bg-light border-0" accept="image/*">
+                            </div>
+
+                        <div class="d-grid gap-2 mt-5">
+                            <button type="submit" class="btn btn-pop btn-lg shadow-sm">
+                                <i class="bi bi-send-fill me-2"></i> Posting Sekarang
+                            </button>
+                            <a href="/" class="btn btn-light text-muted fw-bold">Batal</a>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 bg-white border-top text-center mt-auto">
+    <div class="container">
+      <p class="text-muted mb-0">© <span id="current-year"></span> <strong>Pop. Project</strong>.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

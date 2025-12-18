@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const Controller = require('../controllers/controller.js')
+const ProfileController = require('../controllers/profileController.js')
 
-router.get('/', Controller.showProfile)
-router.get('/edit', Controller.editProfile)
-router.post('/edit', Controller.updateProfile)
+router.get('/', ProfileController.showProfile)
+router.get('/edit', ProfileController.editProfile)
+router.post('/edit', ProfileController.updateProfile)
 
 module.exports = router

@@ -11,10 +11,26 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Profile.belongsTo(models.User, { foreignKey: 'UserId' })
     }
   }
   Profile.init({
-    username: DataTypes.STRING,
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: {
+        msg: "Username sudah digunakan, cari nama lain ya!"
+      },
+      validate: {
+        notEmpty: {
+          msg: "Username harus diisi"
+        },
+        notNull: {
+          msg: "Username harus diisi"
+        }
+      }
+    },
+    bio: DataTypes.TEXT,
     UserId: DataTypes.STRING
   }, {
     sequelize,
